@@ -1,5 +1,5 @@
 import fs from 'fs';
 
-export function readfile(filename) {
+export function readInputFile(filename: string) {
   return fs.readFileSync(filename).toString();
 }
