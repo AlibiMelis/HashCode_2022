@@ -1,14 +1,14 @@
-interface Person {
+export interface Person {
 	name: string;
 	skills: any;
 }
 
-interface Role {
+export interface Role {
 	name: string;
 	level: number;
 }
 
-interface Project {
+export interface Project {
 	name: string;
 	duration: number;
 	bestDate: number;
@@ -16,7 +16,7 @@ interface Project {
 	roles: Role[];
 }
 
-interface Assignment {
+export interface Assignment {
 	project: Project;
 	people: Person[];
 }
