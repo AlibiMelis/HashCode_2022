@@ -1,11 +1,14 @@
 export interface Person {
 	name: string;
 	skills: any;
+	nextAvailableTime?: number;
 }
 
 export interface Role {
 	name: string;
 	level: number;
+	assigned?: Person;
+	conditionMet?: boolean;
 }
 
 export interface Project {
