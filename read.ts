@@ -5,7 +5,7 @@ export const readInput = (filename: string) => {
   const rows = readInputFile(filename).split('\n');
   let [personCount, projectCount] = rows[0].split(' ').map(n => +n);
 
-  let persons: Person[] = [];
+  let people: Person[] = [];
   let projects: Project[] = [];
   
   let i = 1;
@@ -14,6 +14,7 @@ export const readInput = (filename: string) => {
     let person: Person = {
       name: name,
       skills: {},
+      nextAvailableTime: 0
     };
     for (let s = i; s < i + +skillCount; s++) {
       const [skillName, skillLevel] = rows[s].split(' ');
@@ -21,7 +22,7 @@ export const readInput = (filename: string) => {
     }
     i += +skillCount;
     personCount--;
-    persons.push(person);
+    people.push(person);
   }
 
   while (projectCount) {
@@ -46,8 +47,5 @@ export const readInput = (filename: string) => {
     projects.push(project);
   }
 
-  return [persons, projects];
+  return {people, projects};
 }
-
-const [persons, projects] = readInput('./samples/a.txt');
-console.log(persons, projects);

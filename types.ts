@@ -1,7 +1,7 @@
 export interface Person {
 	name: string;
 	skills: any;
-	nextAvailableTime?: number;
+	nextAvailableTime: number;
 }
 
 export interface Role {
